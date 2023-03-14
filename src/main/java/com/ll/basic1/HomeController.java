@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
-    int count = 0;
+    private int count;
+
+    public HomeController(){
+        count = 0;
+    }
 
     // @GetMapping("/home/main") 의 의미
     // 개발자가 스프링부트에게 말한다.
@@ -32,7 +36,7 @@ public class HomeController {
 
     @GetMapping("/home/increase")
     @ResponseBody
-    public int increase(){
+    public int increase(){//리턴되는 int값은 String화 되어서 고객에게 전달
         return count++;
     }
 
